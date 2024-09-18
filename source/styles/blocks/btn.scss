@@ -1,0 +1,41 @@
+.btn {
+  display: inline-block;
+  padding: 13px 50px;
+  border: 2px solid #1f1f1f;
+  border-radius: 66px;
+  background-color: transparent;
+  color: #1f1f1f;
+  font-size: 16px;
+  line-height: 21px;
+  text-align: center;
+  font-family: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 500;
+  width: 263px;
+
+  &--dark {
+    background-color: #1f1f1f;
+    color: #ffffff;
+  }
+
+  &--light:hover,
+  &--light:focus-visible {
+    background-color: #1f1f1f;
+    color: #ffffff;
+  }
+
+  &--dark:hover,
+  &--dark:focus-visible {
+    background-color: #FBCE51;
+    color: #1f1f1f;
+    border-color: #FBCE51;
+  }
+
+  &:disabled,
+  &--disabled {
+    background-color: #d6d6d6;
+    color: #ffffff;
+    cursor: not-allowed;
+  }
+}

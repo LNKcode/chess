@@ -1,0 +1,99 @@
+.hero {
+  padding-top: 15px;
+  position: relative;
+  background-color: #e9ded4;
+}
+
+.hero__title {
+  font-size: 60px;
+  line-height: 66px;
+  margin-bottom: 23px;
+}
+
+.hero__desc {
+  font-size: 18px;
+  line-height: 1.3;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 39px;
+}
+
+.hero__creeping-line {
+  display: flex;
+  background-color: #F54932;
+  overflow: hidden;
+}
+
+.hero__creeping-line-wrapper {
+  display: flex;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  animation: scroll 15s linear infinite;
+
+  p {
+    flex-shrink: 0;
+    font-family: $second-font;
+    color: #ffffff;
+    font-size: 22px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    margin: 0;
+    padding-right: 30px;
+    position: relative;
+    white-space: nowrap;
+
+    &::after {
+      @include pseudo;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: #ffffff;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+.hero__content {
+  max-width: 542px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero__sup-title {
+  text-align: center;
+  display: block;
+}
+
+.hero__sub-title {
+  display: block;
+  text-align: right;
+}
+
+.hero__btns {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.hero__images {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+
+.hero__images-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.5;
+  background-image: url("../../images/background-hero.png");
+  background-color: #e9ded4;
+}
