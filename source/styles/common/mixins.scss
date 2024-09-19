@@ -16,3 +16,36 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+@function z($name) {
+  @if index($z-indexes, $name) {
+  @return (length($z-indexes) - index($z-indexes, $name)) + 100;
+  } @else {
+  @warn "There is no item "#{$name}" in this list; choose one of: #{$z-indexes}";
+  @return null;
+  }
+}
+$z-indexes: (
+  "content",
+  "overlay",
+  "header",
+);
+
+@function z-image($name) {
+  @if index($z-images, $name) {
+  @return (length($z-images) - index($z-images, $name)) + 1;
+  } @else {
+  @warn "There is no item "#{$name}" in this list; choose one of: #{$z-images}";
+  @return null;
+  }
+}
+$z-images: (
+  "horse",
+  "pawn",
+  "city",
+  "bacground",
+  "king",
+  "queen",
+  "sun",
+  "header",
+);
