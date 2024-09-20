@@ -10,6 +10,12 @@ body {
   position: relative;
 }
 
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 *,
 *::after,
 *::before {
