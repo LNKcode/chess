@@ -14,10 +14,6 @@
   }
 }
 
-// .chess-club__desc-top {
-
-// }
-
 .chess-club__img {
   border-radius: 197px/125px;
   float: right;
@@ -26,6 +22,77 @@
   max-width: 400px;
 }
 
+.chess-club__price {
+  display: flex;
+  padding-top: 36px;
+}
+
+.chess-club__image {
+  flex-shrink: 0;
+  width: 528px;
+  height: 609px;
+  margin-left: -28px;
+  position: relative;
+}
+
+.chess-club__black-horse {
+  position: absolute;
+  bottom: 53px;
+  left: 91px;
+  z-index: z-image(black-horse);
+}
+
+.chess-club__boom {
+  position: absolute;
+  bottom: 69px;
+  left: 14px;
+}
+
+.chess-club__hand {
+  position: absolute;
+  bottom: -43px;
+  right: 21px;
+}
+
+.chess-club__content-title {
+  font-family: $second-font;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.35;
+  text-align: left;
+  text-transform: uppercase;
+
+  strong {
+    color: #f54932;
+  }
+}
+
+.chess-club__table {
+  border-collapse: collapse;
+  font-size: 20px;
+  line-height: 24px;
+
+  th {
+    border-right: 2px solid #d0d0d0;
+    font-weight: 400;
+    color: #313131;
+    opacity: 0.7;
+    text-align: left;
+  }
+
+  td {
+    font-weight: 600;
+    color: #313131;
+  }
+
+  tr:not(:last-child) {
+    border-bottom: 2px solid #d0d0d0;
+  }
+}
+
+.chess-club__link {
+  color: #3057A2;
+}
 
 @media (max-width: $tablet-width) {
   .chess-club__top {
