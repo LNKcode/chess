@@ -52,3 +52,46 @@
     opacity: 1;
   }
 }
+
+@keyframes hand-rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  40% {
+    transform: rotate(-10deg);
+  }
+
+  80% {
+    transform: rotate(10deg);
+  }
+
+  100% {
+    transform: rotate(0);
+  }
+}
+
+@keyframes boom {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+@keyframes jump-horse {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  70% {
+    transform: translate(-7px, -7px);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}

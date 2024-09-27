@@ -1,5 +1,6 @@
 .chess-club {
   padding-top: 80px;
+  padding-bottom: 80px;
 }
 
 .chess-club__top {
@@ -40,18 +41,34 @@
   bottom: 53px;
   left: 91px;
   z-index: z-image(black-horse);
+
+  .animate & {
+    animation: jump-horse 0.7s;
+    animation-delay: 800ms;
+  }
 }
 
 .chess-club__boom {
   position: absolute;
   bottom: 69px;
   left: 14px;
+  transform: scale(0);
+
+  .animate & {
+    animation: boom 0.7s;
+    animation-delay: 800ms;
+    animation-fill-mode: forwards;
+  }
 }
 
 .chess-club__hand {
   position: absolute;
   bottom: -43px;
   right: 21px;
+
+  .animate & {
+    animation: hand-rotate 1s ease;
+  }
 }
 
 .chess-club__content-title {
@@ -61,16 +78,42 @@
   line-height: 1.35;
   text-align: left;
   text-transform: uppercase;
+  margin-top: 28px;
+  margin-bottom: 61px;
 
   strong {
     color: #f54932;
   }
 }
 
+.chess-club__content {
+  padding-left: 17px;
+}
+
 .chess-club__table {
   border-collapse: collapse;
   font-size: 20px;
   line-height: 24px;
+  margin-bottom: 49px;
+
+  tr {
+
+    &:not(:last-child) {
+      border-bottom: 2px solid #d0d0d0;
+    }
+
+    &:first-child {
+      th, td {
+        padding-top: 0;
+      }
+    }
+
+    &:last-child {
+      th, td {
+        padding-bottom: 0;
+      }
+    }
+  }
 
   th {
     border-right: 2px solid #d0d0d0;
@@ -78,20 +121,29 @@
     color: #313131;
     opacity: 0.7;
     text-align: left;
+    padding-right: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
 
   td {
     font-weight: 600;
     color: #313131;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
   }
 
-  tr:not(:last-child) {
-    border-bottom: 2px solid #d0d0d0;
+  del {
+    text-decoration-color: #F54932;
+    margin-right: 8px;
   }
 }
 
 .chess-club__link {
   color: #3057A2;
+  font-size: 20px;
+  line-height: 24px;
 }
 
 @media (max-width: $tablet-width) {

@@ -137,7 +137,10 @@
   bottom: 269px;
   left: calc(50%  + 378px);
   z-index: z-image(king);
-  animation: bounceInUp 2s;
+
+  .animate & {
+    animation: bounceInUp 2s;
+  }
 }
 
 .hero__chess-queen {
@@ -145,8 +148,11 @@
   bottom: 164px;
   left: calc(50%  + 46px);
   z-index: z-image(queen);
-  animation: bounceInUp 2s;
-  animation-delay: 0.3s;
+
+  .animate & {
+    animation: bounceInUp 2s;
+    animation-delay: 0.3s;
+  }
 }
 
 .hero__chess-pawn {
@@ -155,9 +161,12 @@
   bottom: 19px;
   left: calc(50% + 554px);
   z-index: z-image(pawn);
-  animation: opacity 2s;
-  animation-delay: 2s;
-  animation-fill-mode: forwards;
+
+  .animate & {
+    animation: opacity 2s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+  }
 }
 
 .hero__chess-horse {
@@ -166,7 +175,10 @@
   bottom: -51px;
   left: calc(50% + 153px);
   z-index: z-image(horse);
-  animation: opacity 1s;
-  animation-delay: 2s;
-  animation-fill-mode: forwards;
+
+  .animate & {
+    animation: opacity 1s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+  }
 }

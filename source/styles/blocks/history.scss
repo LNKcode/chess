@@ -1,0 +1,247 @@
+.history {
+  padding-top: 67px;
+  padding-bottom: 80px;
+  overflow-x: hidden;
+}
+
+.history__slider {
+  position: relative;
+}
+
+.history__slider-image {
+  position: absolute;
+  z-index: 3;
+  bottom: -1px;
+  right: -64px;
+}
+
+.history__link {
+  font-family: $main-font;
+  font-size: 20px;
+  line-height: 24px;
+  color: #3057A2;
+  text-transform: none;
+  display: inline-block;
+  vertical-align: baseline;
+  margin-left: 6px;
+}
+
+.history__title {
+  max-width: 800px;
+  margin-top: 0;
+  margin-bottom: 54px;
+}
+
+.history__time-line {
+  @include list;
+  counter-reset: number;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.history__time-line-item {
+  &:nth-child(2) {
+    grid-row: 1 / span 2;
+    grid-column: 3 / 4;
+
+    .history__time-line-desc {
+      padding-bottom: 65px;
+    }
+
+  }
+
+  &:nth-child(5) {
+    grid-column: 2 / span 2;
+
+    .history__time-line-desc {
+      padding-right: 315px;
+    }
+  }
+}
+
+.history__time-line-item--double {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  grid-column: 1 / span 2;
+}
+
+.history__time-line-desc {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+  padding: 20px 20px 20px 72px;
+  position: relative;
+  background-image: url("../../images/background-history.png"), url("../../images/background-paper.png");
+  background-blend-mode: color-burn;
+  margin: 0;
+  height: 100%;
+
+  &::before {
+    @include pseudo;
+    top: 20px;
+    left: 20px;
+    background-color: #ffffff;
+    font-weight: 600;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    counter-increment: number;
+    content: counter(number);
+    text-align: center;
+    padding-top: 6px;
+  }
+}
+
+
+@media (max-width: $tablet-width) {
+  .history__time-line {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .history__time-line-item {
+    &:nth-child(2) {
+      grid-row: auto;
+      grid-column: 1 / span 2;
+
+      .history__time-line-desc {
+        padding-bottom: 20px;
+      }
+
+    }
+
+    &:nth-child(5),
+    &:nth-child(4) {
+      grid-column: 1 / span 2;
+
+      .history__time-line-desc {
+        padding-right: 315px;
+      }
+    }
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .history__link {
+    display: block;
+    margin-left: 0;
+    margin-top: 12px;
+    font-size: 18px;
+    line-height: 1.2;
+
+    br {
+      display: none;
+    }
+  }
+
+  .history__slider {
+    padding-top: 129px;
+  }
+
+  .history__slider-content {
+    overflow: hidden;
+  }
+
+  .history__time-line {
+    display: flex;
+  }
+
+  .history__time-line-item--double {
+    display: block;
+  }
+
+  .history__time-line-item {
+    padding-top: 42px;
+    padding-bottom: 26px;
+    background-image: url("../../images/background-history.png"), url("../../images/background-paper.png");
+    background-blend-mode: color-burn;
+    width: calc(100vw - 40px);
+    flex-shrink: 0;
+  }
+
+  .history__time-line-desc {
+    height: auto;
+    background: none;
+    padding-bottom: 10px;
+    font-size: 18px;
+    line-height: 1.2;
+  }
+
+  .history__title {
+    margin-bottom: 20px;
+  }
+
+  .history__slider-image {
+    bottom: auto;
+    right: auto;
+    top: 0;
+    left: 0;
+  }
+
+  .history__time-line-item {
+    &:nth-child(5),
+    &:nth-child(4) {
+
+      .history__time-line-desc {
+        padding-right: 20px;
+      }
+    }
+  }
+
+  .history__slider-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 28px
+  }
+
+  .history__slider-pagination-list {
+    @include list;
+    display: flex;
+    margin-left: 16px;
+    margin-right: 16px;
+    gap: 6px;
+    align-items: center;
+
+
+    button {
+      width: 10px;
+      height: 10px;
+      background: #d9d9d9;
+      border-radius: 50%;
+      border: none;
+      padding: 0;
+      vertical-align: middle;
+
+      &.active {
+        background-color: #313131;
+      }
+    }
+  }
+
+  .history__slider-arrow {
+    background-color: #313131;
+    border: none;
+    border-radius: 50%;
+    padding: 0;
+    width: 36px;
+    height: 36px;
+    position: relative;
+
+    &::before {
+      @include pseudo;
+      @include transform-center;
+      width: 20px;
+      height: 18px;
+      background-image: url("../../icons/stack.svg#arrow");
+      background-position: center;
+    }
+  }
+
+  .history__slider-pagination-item {
+    display: inline-block;
+  }
+}
+
+

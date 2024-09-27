@@ -9,15 +9,15 @@
 </head>
 
 <body>
-  <header class="header">
+  <!-- <header class="header">
     <div class="container header__container">
       <a href="./">
         <img src="./images/logo.svg" alt="Логотип">
       </a>
     </div>
-  </header>
+  </header> -->
   <main class="main">
-    <section class="hero">
+    <!-- <section class="hero" data-animation>
       <div class="container hero__container">
         <div class="hero__content">
           <h2 class="hero__title title">
@@ -72,8 +72,8 @@
           </p>
         </div>
       </div>
-    </section>
-    <section class="chess-club">
+    </section> -->
+    <!-- <section class="chess-club">
       <h2 class="visually-hidden">
         Плодотворная дебютная идея
       </h2>
@@ -88,7 +88,7 @@
           </span>
         </div>
         <div class="chess-club__price">
-          <div class="chess-club__image">
+          <div class="chess-club__image" data-animation>
             <img class="chess-club__black-horse" src="./images/chess-black-horse.png" alt="черная фигура лошади.">
             <img class="chess-club__boom" src="./images/boom.svg" alt="хлопок.">
             <img class="chess-club__hand" src="./images/chess-hand.png" alt="Рука с шахматной фигурой.">
@@ -147,7 +147,109 @@
           </div>
         </div>
       </div>
+    </section> -->
+    <section class="history">
+      <div class="container history__container">
+        <h2 class="history__title title">
+          Этапы преображения Васюков
+          <a href="#" class="history__link">
+            Будущие источники<br> обогащения васюкинцев
+          </a>
+        </h2>
 
+        <div class="history__slider">
+          <picture>
+            <source media="(max-width: 767px)" srcset="./images/airplane.png" type="image/png">
+            <img class="history__slider-image" src="./images/airoplane-desctop.png" alt="кукурузник.">
+          </picture>
+          <div class="history__slider-content">
+            <ul class="history__time-line">
+              <li class="history__time-line-item history__time-line-item--double">
+                <p class="history__time-line-desc">
+                  Строительство железнодорожной магистрали Москва-Васюки
+                </p>
+                <p class="history__time-line-desc">
+                  Открытие фешенебельной гостиницы «Проходная пешка» и других небоскрёбов
+                </p>
+              </li>
+              <li class="history__time-line-item">
+                <p class="history__time-line-desc">
+                  Поднятие сельского хозяйства в радиусе на тысячу километров: производство овощей, фруктов, икры,
+                  шоколадных конфет
+                </p>
+              </li>
+              <li class="history__time-line-item history__time-line-item--double">
+                <p class="history__time-line-desc">
+                  Строительство дворца для турнира
+                </p>
+                <p class="history__time-line-desc">
+                  Размещение гаражей для гостевого<br>автотранспорта
+                </p>
+              </li>
+              <li class="history__time-line-item">
+                <p class="history__time-line-desc">
+                  Постройка сверхмощной радиостанции для передачи всему миру сенсационных результатов
+                </p>
+              </li>
+              <li class="history__time-line-item">
+                <p class="history__time-line-desc">
+                  Создание аэропорта «Большие Васюки» с регулярным отправлением почтовых самолётов и дирижаблей
+                  во все концы света, включая Лос-Анжелос и Мельбурн
+                </p>
+              </li>
+            </ul>
+          </div>
+          <div class="history__slider-pagination">
+            <button class="history__slider-arrow history__slider-arrow--left" type="button">
+              <span class="visually-hidden">
+                Назад.
+              </span>
+            </button>
+            <ul class="history__slider-pagination-list">
+              <li class="history__slider-pagination-item">
+                <button class="active" type="button">
+                  <span class="visually-hidden">
+                    1.
+                  </span>
+                </button>
+              </li>
+              <li class="history__slider-pagination-item">
+                <button type="button">
+                  <span class="visually-hidden">
+                    2.
+                  </span>
+                </button>
+              </li>
+              <li class="history__slider-pagination-item">
+                <button type="button">
+                  <span class="visually-hidden">
+                    3.
+                  </span>
+                </button>
+              </li>
+              <li class="history__slider-pagination-item">
+                <button type="button">
+                  <span class="visually-hidden">
+                    4.
+                  </span>
+                </button>
+              </li>
+              <li class="history__slider-pagination-item">
+                <button type="button">
+                  <span class="visually-hidden">
+                    5.
+                  </span>
+                </button>
+              </li>
+            </ul>
+            <button class="history__slider-arrow history__slider-arrow--right" type="button">
+              <span class="visually-hidden">
+                Вперед.
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
   <footer class="footer">

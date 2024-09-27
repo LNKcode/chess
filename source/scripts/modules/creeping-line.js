@@ -3,7 +3,9 @@ const creepingLineWrapperNode = document.querySelector('.hero__creeping-line-wra
 
 
 function copyDesc () {
-  creepingLineNode.append(creepingLineWrapperNode.cloneNode(true));
+  if (creepingLineWrapperNode) {
+    creepingLineNode.append(creepingLineWrapperNode.cloneNode(true));
+  }
 }
 
 export {copyDesc};
