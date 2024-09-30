@@ -5,4 +5,17 @@
   top: 0;
   left: 0;
   right: 0;
+  z-index: z(header);
+}
+
+@media (max-width: $mobile-width) {
+  .header__logo {
+    display: block;
+    width: 213px;
+  }
+
+  .header {
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
 }

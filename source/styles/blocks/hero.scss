@@ -120,6 +120,10 @@
   top: -43px;
   z-index: z-image(sun);
   overflow: hidden;
+
+  img {
+    max-width: none;
+  }
 }
 
 .hero__sun-text {
@@ -180,5 +184,103 @@
     animation: opacity 1s;
     animation-delay: 2s;
     animation-fill-mode: forwards;
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .hero__btns {
+    display: block;
+  }
+
+  .hero__link {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 14px;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .hero__title {
+    font-size: 36px;
+    line-height: 1.1;
+  }
+
+  .hero__sup-title {
+    padding-left: 9px;
+  }
+
+  .hero__desc {
+    font-size: 18px;
+    line-height: 1.3;
+    text-align: left;
+    margin-bottom: 33px;
+  }
+
+  .hero__link {
+    padding: 13px;
+    border: none;
+    &--light {
+      background-color: rgba(255, 255, 255, 1);
+      border: none;
+    }
+  }
+
+  .hero__content {
+    padding-bottom: 277px;
+    padding-top: 46px;
+  }
+
+  .hero__images {
+    bottom: 37px;
+  }
+
+  .hero__chess-horse {
+    display: none;
+  }
+
+  .hero__chess-king {
+    display: none;
+  }
+
+  .hero__chess-pawn {
+    display: none;
+  }
+
+  .hero__chess-queen {
+    display: none;
+  }
+
+  .hero__city {
+    background-image: url("../../images/city-mobile.png");
+    background-position: left calc(50% - 146px) bottom -18px;
+  }
+
+  .hero__sun {
+    width: 298px;
+    height: 298px;
+    top: auto;
+    left: calc(50% - 156px);
+    bottom: 67px;
+
+    .hero__sun-text {
+      width: 350px;
+      height: 350px;
+      left: -27px;
+      top: -27px;
+      max-width: none;
+    }
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .hero__creeping-line-wrapper {
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    p {
+      font-size: 16px;
+    }
   }
 }
