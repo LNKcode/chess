@@ -1,0 +1,38 @@
+.creeping-line {
+  display: flex;
+  background-color: #F54932;
+  overflow: hidden;
+  position: relative;
+  z-index: 3;
+}
+
+.creeping-line__wrapper {
+  display: flex;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  animation: scroll 15s linear infinite;
+
+  p {
+    flex-shrink: 0;
+    font-family: $second-font;
+    color: #ffffff;
+    font-size: 22px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    margin: 0;
+    padding-right: 30px;
+    position: relative;
+    white-space: nowrap;
+
+    &::after {
+      @include pseudo;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: #ffffff;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}

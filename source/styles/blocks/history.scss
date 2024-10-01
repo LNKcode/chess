@@ -248,7 +248,12 @@
       transform: translate(-50%, -50%) rotate(180deg);
     }
 
-    &:disabled {
+    &:hover {
+      background-color: #FBCE51;
+    }
+
+    &:disabled,
+    &:disabled:hover {
       background-color: rgba(49, 49, 49, 0.2);
     }
   }
