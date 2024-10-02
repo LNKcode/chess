@@ -36,3 +36,14 @@
     }
   }
 }
+
+@media (max-width: $mobile-width) {
+  .creeping-line__wrapper {
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    p {
+      font-size: 16px;
+    }
+  }
+}

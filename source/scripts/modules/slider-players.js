@@ -2,25 +2,32 @@ const sliderNode = document.querySelector('.players__slider-list');
 const slides = sliderNode.querySelectorAll('.players__slider-item');
 const rightBtnNode = document.querySelector('.players__slider-arrow--right');
 const leftBtnNode = document.querySelector('.players__slider-arrow--left');
+const counterCurrentNode = document.querySelector('.players__slider-counter-current');
+const counterAllNode = document.querySelector('.players__slider-counter-all');
 const slideWidth = slides[0].offsetWidth;
 const gapWidth = 20;
-let counter = 3;
-let step = (slideWidth + gapWidth) * counter;
-let slideTime = 1000;
-let lengthDuble = (slideWidth + gapWidth) * slides.length;
+let counter;
+if (window.innerWidth <= 767) {
+  counter = 1;
+} else {
+  counter = 3;
+}
+const step = (slideWidth + gapWidth) * counter;
+const slideTime = 1000;
+const lengthDuble = (slideWidth + gapWidth) * slides.length;
+let counterCurrent = counter;
 
 function initSliderPlayer () {
-  // for (let j = 0; j < counter; j++) {
-  //   slides[j].classList.add('current');
-  // }
+  counterAllNode.textContent = slides.length;
+  counterCurrentNode.textContent = counterCurrent;
   for (let i = 1; i <= slides.length; i++) {
-    let clone = slides[slides.length - i].cloneNode(true);
+    const clone = slides[slides.length - i].cloneNode(true);
     sliderNode.prepend(clone);
   }
   sliderNode.style.transform = `translateX(-${lengthDuble}px)`;
-  // setInterval(() => {
-  //   moveSlide('left');
-  // }, 4000);
+  setInterval(() => {
+    moveSlide('right');
+  }, 4000);
 
   rightBtnNode.addEventListener('click', () => {
     moveSlide('right');
@@ -32,38 +39,31 @@ function initSliderPlayer () {
 
 function moveSlide (side) {
   sliderNode.style.transition = `transform ${slideTime}ms`;
-  if (side == 'right') {
+  if (side === 'right') {
     sliderNode.style.transform = `translateX(${-lengthDuble - step}px)`;
+    counterCurrent += counter;
+    if (counterCurrent > slides.length) {
+      counterCurrent -= slides.length;
+    }
   } else {
     sliderNode.style.transform = `translateX(${-lengthDuble + step}px)`;
+    counterCurrent -= counter;
+    if (counterCurrent < counter) {
+      counterCurrent += slides.length;
+    }
   }
+  counterCurrentNode.textContent = counterCurrent;
 
   setTimeout(() => {
-    // const currents = sliderNode.querySelectorAll('.players__slider-item.current');
-    // if (side == 'right') {
-    //   for (let i = currents.length - 1; i >= 0; i--) {
-    //     let li = currents[i];
-    //     let liClone = currents[i].cloneNode(true);
-    //     sliderNode.prepend(liClone);
-    //     sliderNode.removeChild(li);
-    //   }
-    // } else {
-    //   for (let i = 0; i < currents.length; i++) {
-    //     let li = currents[i];
-    //     let liClone = currents[i].cloneNode(true);
-    //     sliderNode.append(liClone);
-    //     sliderNode.removeChild(li);
-    //   }
-    // }
     for (let i = 0; i < counter; i++) {
-      if (side == 'right') {
-        let li = sliderNode.lastElementChild;
-        let liClone = sliderNode.lastElementChild.cloneNode(true);
+      if (side === 'left') {
+        const li = sliderNode.lastElementChild;
+        const liClone = sliderNode.lastElementChild.cloneNode(true);
         sliderNode.prepend(liClone);
         sliderNode.removeChild(li);
       } else {
-        let li = sliderNode.firstElementChild;
-        let liClone = sliderNode.firstElementChild.cloneNode(true);
+        const li = sliderNode.firstElementChild;
+        const liClone = sliderNode.firstElementChild.cloneNode(true);
         sliderNode.append(liClone);
         sliderNode.removeChild(li);
       }
